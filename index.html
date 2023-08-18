@@ -1,0 +1,1112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/lightbox.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            background-color: blueviolet;
+            position: fixed;
+            z-index: 100;
+        }
+
+        header>span {
+            width: 30%;
+            display: flex;
+            justify-content: end;
+            color: white;
+            font-size: 3rem;
+        }
+
+        nav {
+            width: 55%;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            padding: 1.7rem;
+            padding-left: 10rem;
+
+        }
+
+        nav>a {
+            text-decoration: none;
+            color: white;
+            font-size: 1.3rem;
+            font-weight: 550;
+            font-family: monospace;
+            transition: 0.3s;
+        }
+
+        a:hover {
+            color: rgb(173, 32, 32);
+        }
+
+        .section1 {
+            width: 100%;
+            height: 100vh;
+            background-image: url("image/b3.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .section1-item>:nth-child(1) {
+            color: white;
+            font-size: 4rem;
+            font-weight: 550;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        .section1-item>:nth-child(2) {
+            color: white;
+            font-size: 1.5rem;
+            padding-left: 0.7rem;
+            padding-top: 1rem;
+        }
+
+        .section1-item>:nth-child(3) {
+            width: 38%;
+            margin-left: 31%;
+            margin-top: 1rem;
+            padding: 1rem;
+            background-color: rgb(205, 26, 86);
+            font-size: 1.5rem;
+            text-align: center;
+            border: white solid 1px;
+            transition: 0.3s;
+        }
+
+        .section1-item a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .section1-item>:nth-child(3):hover {
+            background-color: white;
+        }
+
+        .section1-item>:nth-child(3):hover a {
+            color: black;
+        }
+
+        .section2 {
+            width: 100%;
+            height: 200vh;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+        }
+
+        .section2-item1 {
+            background-color: rgb(76, 21, 128);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .section2-item1>div {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 550;
+            color: white;
+        }
+
+        .section2-item1>div>p {
+            font-weight: 200;
+            padding-top: 2rem;
+            font-size: 1.3rem;
+        }
+
+        .section2-item2 {
+            grid-column-start: 2;
+            grid-column-end: 4;
+        }
+
+        .section2-item2>img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .section2-item3 {
+            background-color: rgb(177, 71, 106);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .section2-item3>div {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 550;
+            color: white;
+        }
+
+        .section2-item3>div>p {
+            font-weight: 200;
+            padding-top: 2rem;
+            font-size: 1.3rem;
+        }
+
+        .section2-item4 {
+            background-color: rgb(177, 71, 106);
+            grid-column-start: 1;
+            grid-column-end: 3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .section2-item4>div {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 550;
+            color: white;
+        }
+
+        .section2-item4>div>p {
+            font-weight: 200;
+            padding-top: 2rem;
+            font-size: 1.3rem;
+        }
+
+        .section2-item5>img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .section2-item6 {
+            background-color: rgb(69, 68, 68);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .section2-item6>div {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 550;
+            color: white;
+        }
+
+        .section2-item6>div>p {
+            font-weight: 200;
+            padding-top: 2rem;
+            font-size: 1.3rem;
+        }
+
+        .section2-item7 {
+            width: 100%;
+            height: 100%;
+        }
+
+        .section2-item8 {
+            background-color: rgb(76, 21, 128);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .section2-item8>div {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 550;
+            color: white;
+        }
+
+        .section2-item8>div>p {
+            font-weight: 200;
+            padding-top: 2rem;
+            font-size: 1.3rem;
+        }
+
+        .section2-item9 {
+            grid-column-start: 3;
+            grid-column-end: 5;
+
+        }
+
+        .section2-item9>img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .section3 {
+            width: 100%;
+
+        }
+
+        .section3-item {
+            padding: 4rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+
+        .section3-item1>p {
+            font-size: 2rem;
+            padding-top: 1rem;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+        }
+
+        .section3-item1>span {
+            margin-top: 1rem;
+            display: flex;
+            font-size: 2rem;
+            align-items: center;
+            justify-content: center;
+            color: blueviolet;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        .section4 {
+
+            width: 100%;
+            height: 70vh;
+            background-image: url('image/s1.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+
+        }
+
+        .section4-title {
+            width: 100%;
+            height: 25%;
+            font-size: 3.5rem;
+            text-align: center;
+            padding-top: 8vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-weight: 500;
+        }
+
+        .section4-item {
+            width: 100%;
+            height: 75%;
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+        }
+
+
+
+        .section4-item1 {
+            width: 100%;
+            height: 100%;
+            grid-column-start: 2;
+            grid-column-end: 3;
+            /* background-color: aqua; */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .section4-item-content>:nth-child(2) {
+
+            font-size: 2rem;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .section4-item-content>:nth-child(3) {
+            text-align: center;
+            font-size: 1.3rem;
+
+
+        }
+
+        .section4-item-link {
+            display: inline-block;
+            text-align: center;
+            font-size: 1rem;
+            padding: 1.2rem;
+            width: 60%;
+            margin: 1em 20% 0;
+            background-color: palevioletred;
+            border: white solid 1px;
+            transition: 0.3s;
+            text-decoration: none;
+            color: white;
+        }
+
+
+
+        .section4-item-link:hover {
+            background-color: white;
+            color: black;
+            border: solid black 1px;
+        }
+
+        #item1 {
+            margin-left: 26%;
+            background-color: white;
+            border: black solid 1px;
+            border-radius: 50%;
+            padding: 1.5rem 2rem;
+            font-size: 4rem;
+            color: rgb(44, 44, 165);
+            transition: 0.3s;
+        }
+
+        #item2 {
+            margin-left: 26%;
+            background-color: white;
+            border: black solid 1px;
+            border-radius: 50%;
+            padding: 1.5rem 2rem;
+            font-size: 4rem;
+            color: rgb(44, 44, 165);
+            transition: 0.3s;
+        }
+
+        #item3 {
+            margin-left: 26%;
+            background-color: white;
+            border: black solid 1px;
+            border-radius: 50%;
+            padding: 1.65rem 2rem;
+            font-size: 4rem;
+            color: rgb(44, 44, 165);
+            transition: 0.3s;
+        }
+
+        #item3:hover {
+            color: brown;
+        }
+
+        #item4 {
+            margin-left: 26%;
+            background-color: white;
+            border: black solid 1px;
+            border-radius: 50%;
+            padding: 1.5rem 2rem;
+            font-size: 4rem;
+            color: rgb(44, 44, 165);
+            transition: 0.3s;
+        }
+
+        #item4:hover {
+            color: brown;
+        }
+
+        #item1:hover {
+            color: brown;
+        }
+
+        #item2:hover {
+            color: brown;
+        }
+
+        .section4-item2 {
+            grid-column-start: 3;
+            grid-column-end: 4;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .section4-item3 {
+            grid-column-start: 4;
+            grid-column-end: 5;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .section4-item4 {
+            grid-column-start: 5;
+            grid-column-end: 6;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .section5 {
+            margin-bottom: 10vh;
+        }
+
+        .section5-title {
+            text-align: center;
+            padding: 3rem;
+            font-size: 3rem;
+            font-weight: 550;
+        }
+
+
+        .section5-content a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .section5-content {
+            width: 98%;
+            margin: 0 1%;
+            height: 135vh;
+
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+
+        }
+
+        .section5-content1 {
+            grid-column-start: 1;
+            grid-column-end: 3;
+            background-image: url('image/g1.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            overflow: hidden;
+        }
+
+        .section5-content2 {
+            grid-column-start: 3;
+            grid-column-end: 4;
+            margin-left: 3vh;
+            background-image: url('image/g2.jpg');
+            background-repeat: no-repeat;
+            overflow: hidden;
+            background-size: cover;
+
+        }
+
+        .section5-content3 {
+            grid-column-start: 4;
+            grid-column-end: 5;
+            margin-left: 3vh;
+            background-image: url('image/g3.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            overflow: hidden;
+
+        }
+
+        .section5-content4 {
+            margin-top: 3vh;
+            grid-column-start: 1;
+            grid-column-end: 2;
+            background-image: url('image/g4.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            overflow: hidden;
+        }
+
+        .section5-content5 {
+            margin-top: 3vh;
+            grid-column-start: 2;
+            grid-column-end: 3;
+            margin-left: 3vh;
+            background-image: url('image/g5.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            overflow: hidden;
+        }
+
+        .section5-content6 {
+            margin-top: 3vh;
+            grid-column-start: 3;
+            grid-column-end: 5;
+            margin-left: 3vh;
+            background-image: url('image/g6.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            overflow: hidden;
+        }
+
+        .section5-content-header {
+            position: relative;
+            display: flex;
+            justify-content: flex-end;
+            width: 98%;
+            margin: 2rem 1% 0;
+            padding-top: 3rem;
+            padding-bottom: 2rem;
+            padding-right: 1rem;
+            font-size: 1.8rem;
+            transition: 0.5s;
+        }
+
+        .section5-content-header:hover {
+            padding-top: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: white solid 5px;
+        }
+
+        .section5-content-header:hover .section5-content-footer {
+            top: 500%;
+            opacity: 1;
+        }
+
+        .section5-content-footer {
+            width: 60%;
+            font-size: 1.2rem;
+            position: absolute;
+            top: 400%;
+            opacity: 0;
+            color: white;
+        }
+
+        .section6 {
+            width: 100%;
+            background-color: cornflowerblue;
+            margin-bottom: 10vh;
+
+        }
+
+        .section6-titel {
+            text-align: center;
+            font-size: 3rem;
+            color: white;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-weight: 550;
+            padding: 4rem;
+
+        }
+
+        .section6-content {
+            display: grid;
+            width: 70%;
+            margin: 0 15%;
+            height: 120vh;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+        }
+
+        .section6-content-item1 {
+            position: relative;
+            background-image: url('image/t1.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            transition: 0.5s;
+        }
+
+        .section6-content-item2 {
+            position: relative;
+            background-image: url('image/t2.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin-left: 3vh;
+        }
+
+        .section6-content-item3 {
+            position: relative;
+            background-image: url('image/t3.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin-left: 3vh;
+        }
+
+        .section6-content-item4 {
+            position: relative;
+            margin-top: 3vh;
+            background-image: url('image/t4.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .section6-content-item5 {
+            position: relative;
+            margin-top: 3vh;
+            background-image: url('image/t1.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin-left: 3vh;
+        }
+
+        .section6-content-item6 {
+            position: relative;
+            margin-top: 3vh;
+            background-image: url('image/t3.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin-left: 3vh;
+        }
+
+        .section6-content-item-back {
+
+            width: 100%;
+            height: 100%;
+            transition: 0.4s;
+            opacity: 0;
+
+        }
+
+        .section6-content-item1:hover .front-content {
+            opacity: 0;
+        }
+
+        .section6-content-item2:hover .front-content {
+            opacity: 0;
+        }
+
+        .section6-content-item3:hover .front-content {
+            opacity: 0;
+        }
+
+        .section6-content-item4:hover .front-content {
+            opacity: 0;
+        }
+
+        .section6-content-item5:hover .front-content {
+            opacity: 0;
+        }
+
+        .section6-content-item6:hover .front-content {
+            opacity: 0;
+        }
+
+        .front-content {
+            position: absolute;
+            width: 100%;
+            height: 20%;
+            padding: 1rem;
+            background-color: rgb(255, 0, 136);
+            top: 80%;
+            transition: 0.4s;
+        }
+
+        .back-content {
+            width: 70%;
+            height: 65%;
+            padding-top: 25%;
+            margin: 0% 15% 0;
+            color: white;
+            /* background-color: aqua; */
+        }
+
+        .section6-content-item1:hover .section6-content-item-back {
+            opacity: 1;
+            background-color: rgba(0, 0, 0, 0.397);
+        }
+
+        .section6-content-item2:hover .section6-content-item-back {
+            opacity: 1;
+            background-color: rgba(0, 0, 0, 0.397);
+        }
+
+        .section6-content-item3:hover .section6-content-item-back {
+            opacity: 1;
+            background-color: rgba(0, 0, 0, 0.397);
+        }
+
+        .section6-content-item4:hover .section6-content-item-back {
+            opacity: 1;
+            background-color: rgba(0, 0, 0, 0.397);
+        }
+
+        .section6-content-item5:hover .section6-content-item-back {
+            opacity: 1;
+            background-color: rgba(0, 0, 0, 0.397);
+        }
+
+        .section6-content-item6:hover .section6-content-item-back {
+            opacity: 1;
+            background-color: rgba(0, 0, 0, 0.397);
+        }
+
+        .back-content>h2 {
+            color: brown;
+            margin-bottom: 1vh;
+        }
+
+        .back-content>:nth-child(2) {
+            font-size: 1.2rem;
+            margin-bottom: 1vh;
+        }
+
+        .back-content>:nth-child(3) {
+            font-size: 1.2rem;
+            margin-bottom: 1vh;
+            line-height: 1.6;
+        }
+
+        .icon {
+            width: 80%;
+            margin-top: 3vh;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .icon a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .icon a:hover {
+            color: brown;
+        }
+
+        #fb,
+        #gmail,
+        #twitter {
+            font-size: 1.2rem;
+            padding: 0.7rem;
+            border: solid white 1px;
+        }
+
+        #fb {
+            padding: 0.7rem 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <span>Bake</span>
+        <nav>
+            <a href="">Home</a>
+            <a href="">About</a>
+            <a href="">Service</a>
+            <a href="">Gallery</a>
+            <a href="">Clients</a>
+            <a href="">Contact</a>
+        </nav>
+    </header>
+    <section class="section1">
+        <div class="section1-item">
+            <div>Best Bake Here</div>
+            <div>Donec at massa nec sem eleifend fermentum.</div>
+            <div><a href="">Learn more</a></div>
+        </div>
+    </section>
+    <section class="section2">
+        <div class="section2-item1">
+            <div>Tradition <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, neque modi ipsa repellendus,
+                    alias fugiat </p>
+            </div>
+        </div>
+        <div class="section2-item2"><img src="image/ab1.jpg" alt=""></div>
+        <div class="section2-item3">
+            <div>Creativity <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, neque modi ipsa repellendus,
+                    alias fugiat </p>
+            </div>
+        </div>
+        <div class="section2-item4">
+            <div>What We Bake Best For You <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, neque modi
+                    ipsa repellendus,
+                    alias fugiat </p>
+            </div>
+        </div>
+        <div class="section2-item5"><img src="image/ab2.jpg" alt=""></div>
+        <div class="section2-item6">
+            <div>Quality <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, neque modi ipsa repellendus,
+                    alias fugiat </p>
+            </div>
+        </div>
+        <div class="section2-item7"><img src="image/ab3.jpg" alt=""></div>
+        <div class="section2-item8">
+            <div>Tasty Cakes <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, neque modi ipsa
+                    repellendus,
+                    alias fugiat </p>
+            </div>
+        </div>
+        <div class="section2-item9">
+            <img src="image/ab4.jpg" alt="">
+        </div>
+    </section>
+    <section class="section3">
+        <div class="section3-item">
+            <div class="section3-item1">
+                <span class="coffee-num"></span>
+                <p>Coffee</p>
+            </div>
+            <div class="section3-item1">
+                <span class="happy-num">2</span>
+                <p>Happy Client</p>
+            </div>
+            <div class="section3-item1">
+                <span class="experience-num">3</span>
+                <p>Experience</p>
+            </div>
+            <div class="section3-item1">
+                <span class="expert-num">4</span>
+                <p>Expert Worker</p>
+            </div>
+        </div>
+    </section>
+    <section class="section4">
+        <div class="section4-title">OUR SERVICES</div>
+        <div class="section4-item">
+            <div class="section4-item1">
+                <div class="section4-item-content">
+                    <i class="fa fa-cutlery" id="item1" aria-hidden="true"></i>
+                    <div>Tasty Cakes</div>
+                    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+                    <a class="section4-item-link" href="">Lear More</a>
+                </div>
+
+            </div>
+            <div class="section4-item2">
+                <div class="section4-item-content">
+                    <i class="fa fa-asterisk" id="item2" aria-hidden="true"></i>
+                    <div>Creativity</div>
+                    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+                    <a class="section4-item-link" href="">Lear More</a>
+                </div>
+            </div>
+            <div class="section4-item3">
+                <div class="section4-item-content">
+                    <i class="fa fa-coffee" id="item3" aria-hidden="true"></i>
+                    <div>Tradition</div>
+                    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+                    <a class="section4-item-link" href="">Lear More</a>
+                </div>
+            </div>
+            <div class="section4-item4">
+                <div class="section4-item-content">
+                    <i class="fa fa-bell-o" id="item4" aria-hidden="true"></i>
+                    <div>Quality</div>
+                    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+                    <a class="section4-item-link" href="">Lear More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section5">
+        <div class="section5-title">
+            OUR GALLERY
+        </div>
+        <div class="section5-content">
+            <a class="section5-content1" href="image/g1.jpg" data-lightbox="roadtrip">
+                <div class="section5-content-header">OUR<b>GALLERY</b>
+                    <div class="section5-content-footer">Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore
+                        alias ad ea possimus incidunt maiores similique</div>
+                </div>
+
+            </a>
+            <a class="section5-content2" href="image/g2.jpg" data-lightbox="roadtrip">
+                <div class="section5-content-header">OUR<b>GALLERY</b>
+                    <div class="section5-content-footer">Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore
+                    </div>
+                </div>
+            </a>
+            <a class="section5-content3" href="image/g3.jpg" data-lightbox="roadtrip">
+                <div class="section5-content-header">OUR<b>GALLERY</b>
+                    <div class="section5-content-footer">Lorem ipsum dolor sit amet consectetur
+                        adipisicing elit. Labore
+                    </div>
+                </div>
+            </a>
+            <a class="section5-content4" href="image/g4.jpg" data-lightbox="roadtrip">
+                <div class="section5-content-header">OUR<b>GALLERY</b>
+                    <div class="section5-content-footer">Lorem ipsum dolor sit amet consectetur
+                        adipisicing elit.
+                    </div>
+                </div>
+            </a>
+            <a class="section5-content5" href="image/g5.jpg" data-lightbox="roadtrip">
+                <div class="section5-content-header">OUR<b>GALLERY</b>
+                    <div class="section5-content-footer">Lorem ipsum dolor sit amet consectetur
+
+                    </div>
+                </div>
+            </a>
+            <a class="section5-content6" href="image/g6.jpg" data-lightbox="roadtrip">
+                <div class="section5-content-header">OUR<b>GALLERY</b>
+                    <div class="section5-content-footer">Lorem ipsum dolor sit amet consectetur
+                        adipisicing elit. Labore
+                        alias ad </div>
+                </div>
+            </a>
+        </div>
+    </section>
+    <section class="section6">
+        <div class="section6-titel">BAKE TEAM</div>
+        <div class="section6-content">
+            <div class="section6-content-item1">
+                <div class="section6-content-item-back">
+                    <div class="back-content">
+                        <h2>John Simon</h2>
+                        <p>-Cake Maker</p>
+                        <p>Mauris tincidunt dolor eget diam dapibus vitae finibusnisl friuisque pretiuam</p>
+                        <p class="icon">
+                            <a href=""><i id="fb" class="fa fa-facebook" aria-hidden="true"></i></a>
+                            <a href=""><i id="gmail" class="fa fa-google-plus" aria-hidden="true"></i></a>
+                            <a href=""><i id="twitter" class="fa fa-twitter" aria-hidden="true"></i></a>
+                        </p>
+                    </div>
+
+                </div>
+                <div class="front-content">
+                    <h2>John Simon</h2>
+                    <p>-Cake Maker</p>
+                </div>
+            </div>
+            <div class="section6-content-item2">
+                <div class="section6-content-item-back">
+                    <div class="back-content">
+                        <h2>John Simon</h2>
+                        <p>-Cake Maker</p>
+                        <p>Mauris tincidunt dolor eget diam dapibus vitae finibusnisl friuisque pretiuam</p>
+                        <p class="icon">
+                            <a href=""><i id="fb" class="fa fa-facebook" aria-hidden="true"></i></a>
+                            <a href=""><i id="gmail" class="fa fa-google-plus" aria-hidden="true"></i></a>
+                            <a href=""><i id="twitter" class="fa fa-twitter" aria-hidden="true"></i></a>
+                        </p>
+                    </div>
+
+                </div>
+                <div class="front-content">
+                    <h2>John Simon</h2>
+                    <p>-Cake Maker</p>
+                </div>
+            </div>
+            <div class="section6-content-item3">
+                <div class="section6-content-item-back">
+                    <div class="back-content">
+                        <h2>John Simon</h2>
+                        <p>-Cake Maker</p>
+                        <p>Mauris tincidunt dolor eget diam dapibus vitae finibusnisl friuisque pretiuam</p>
+                        <p class="icon">
+                            <a href=""><i id="fb" class="fa fa-facebook" aria-hidden="true"></i></a>
+                            <a href=""><i id="gmail" class="fa fa-google-plus" aria-hidden="true"></i></a>
+                            <a href=""><i id="twitter" class="fa fa-twitter" aria-hidden="true"></i></a>
+                        </p>
+                    </div>
+
+                </div>
+                <div class="front-content">
+                    <h2>John Simon</h2>
+                    <p>-Cake Maker</p>
+                </div>
+            </div>
+            <div class="section6-content-item4">
+                <div class="section6-content-item-back">
+                    <div class="back-content">
+                        <h2>John Simon</h2>
+                        <p>-Cake Maker</p>
+                        <p>Mauris tincidunt dolor eget diam dapibus vitae finibusnisl friuisque pretiuam</p>
+                        <p class="icon">
+                            <a href=""><i id="fb" class="fa fa-facebook" aria-hidden="true"></i></a>
+                            <a href=""><i id="gmail" class="fa fa-google-plus" aria-hidden="true"></i></a>
+                            <a href=""><i id="twitter" class="fa fa-twitter" aria-hidden="true"></i></a>
+                        </p>
+                    </div>
+
+                </div>
+                <div class="front-content">
+                    <h2>John Simon</h2>
+                    <p>-Cake Maker</p>
+                </div>
+            </div>
+            <div class="section6-content-item5">
+                <div class="section6-content-item-back">
+                    <div class="back-content">
+                        <h2>John Simon</h2>
+                        <p>-Cake Maker</p>
+                        <p>Mauris tincidunt dolor eget diam dapibus vitae finibusnisl friuisque pretiuam</p>
+                        <p class="icon">
+                            <a href=""><i id="fb" class="fa fa-facebook" aria-hidden="true"></i></a>
+                            <a href=""><i id="gmail" class="fa fa-google-plus" aria-hidden="true"></i></a>
+                            <a href=""><i id="twitter" class="fa fa-twitter" aria-hidden="true"></i></a>
+                        </p>
+                    </div>
+
+                </div>
+                <div class="front-content">
+                    <h2>John Simon</h2>
+                    <p>-Cake Maker</p>
+                </div>
+            </div>
+            <div class="section6-content-item6">
+                <div class="section6-content-item-back">
+                    <div class="back-content">
+                        <h2>John Simon</h2>
+                        <p>-Cake Maker</p>
+                        <p>Mauris tincidunt dolor eget diam dapibus vitae finibusnisl friuisque pretiuam</p>
+                        <p class="icon">
+                            <a href=""><i id="fb" class="fa fa-facebook" aria-hidden="true"></i></a>
+                            <a href=""><i id="gmail" class="fa fa-google-plus" aria-hidden="true"></i></a>
+                            <a href=""><i id="twitter" class="fa fa-twitter" aria-hidden="true"></i></a>
+                        </p>
+                    </div>
+
+                </div>
+                <div class="front-content">
+                    <h2>John Simon</h2>
+                    <p>-Cake Maker</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section7">
+
+    </section>
+</body>
+<script src="js/lightbox.js"></script>
+<script>
+    var coffeenum = document.querySelector('.coffee-num');
+    var happy = document.querySelector('.happy-num');
+    var experience = document.querySelector('.experience-num');
+    var expert = document.querySelector('.expert-num')
+    function runcoffeenum() {
+        let currenhappytnum = 0
+        let currenexperiencetnum = 0
+        let currencoffeetnum = 0
+        let currenexperttnum = 0
+        let couthappynum = setInterval(() => {
+            happy.innerHTML = currenhappytnum
+            currenhappytnum = currenhappytnum + 5;
+            if (currenhappytnum > 650) {
+                clearInterval(couthappynum)
+            }
+        }, 1);
+        let cout_experience_num = setInterval(() => {
+            experience.innerHTML = currenexperiencetnum
+            currenexperiencetnum = currenexperiencetnum + 1;
+            if (currenexperiencetnum > 10) {
+                clearInterval(cout_experience_num)
+            }
+        }, 50);
+        let cout_expert_num = setInterval(() => {
+            expert.innerHTML = currenexperttnum
+            currenexperttnum = currenexperttnum + 10;
+            if (currenexperttnum > 1010) {
+                clearInterval(cout_expert_num)
+            }
+        }, 1);
+        let coutcoffeenum = setInterval(() => {
+            coffeenum.innerHTML = currencoffeetnum
+            currencoffeetnum = currencoffeetnum + 25;
+            if (currencoffeetnum > 3500) {
+                clearInterval(coutcoffeenum)
+            }
+        }, 1);
+
+    }
+
+    const observer = new IntersectionObserver(function (entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                runcoffeenum();
+            }
+        });
+    }, { threshold: 0.5, root: null }); // root: null để theo dõi tầm nhìn (viewport)
+
+
+    observer.observe(coffeenum);
+
+</script>
+
+</html>
